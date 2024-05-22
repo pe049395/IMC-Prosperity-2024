@@ -30,7 +30,7 @@ There was a slight difference between the PnL in our backtesting tool and pnl in
 Our goal was to place orders that maximize the expected utility per trade, calculated as `(profit + other utility increment) * execution probability`.
 For example, if a buy order at 9998 was executed when the fair value was 10000, the profit from that trade would be 2.
 Other utility includes inventory risk. When market making, keeping a position close to zero is highly advantageous. Larger positions involve higher exposure to market risk. And as positions approach their limits, the potential for profitable trades decreases due to smaller execution quantities.
-Initially, we implemented Ornstein-Uhlenbeck process-based market making for `AMETHYSTS` and $dS=\sigma dW$ process-based market making for `STARFRUIT`.
+Initially, we implemented Ornstein-Uhlenbeck process-based market making for `AMETHYSTS` and $dS=\sigma dW$ process based market making for `STARFRUIT`.
 However, these market making models were not perfectly suited to our market since the execution probability was modeled using an exponential function. To address this, we attempted to estimate the execution probability using a Poisson distribution. Unfortunately, this did not result in a significant improvement in PnL, so we reverted back to the original model.
 
 **Market Taking:**
