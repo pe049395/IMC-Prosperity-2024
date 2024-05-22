@@ -56,4 +56,4 @@ We couldn't find strong connections between `ORCHIDS` and the various factors. S
 
 Initially, we considered market making due to the wide bid-ask spread of `ORCHIDS`, but found it impossible because bids lower than the fair price and asks higher than the fair price did not fill well.
 
-Instead, `ORCHIDS` were also tradable on the exchange of the south archipelago. Therefore, we implemented arbitrage between the two exchanges. We placed orders to maximize expected profit per trade (= `(enter price on this island - exit price on the south archipelago - shipping cost - import tariff) * execution probability`). We estimated the execution probability through our own experiment.
+Instead, `ORCHIDS` were also tradable on the exchange of the south archipelago. Therefore, we implemented arbitrage between the two exchanges. We placed orders that maximizes expected profit per trade (= `(enter price on this island - exit price on the south archipelago - shipping cost - import tariff) * execution probability`). We estimated the execution probability through our own experiment.
