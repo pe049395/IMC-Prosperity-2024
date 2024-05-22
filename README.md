@@ -29,6 +29,7 @@ There was a slight difference between the PnL in our backtesting tool and pnl in
 
 ##### Strategy
 **Market Making:**
+
 Our goal was to place orders that maximize the expected utility per trade, calculated as `(profit + other utility increment) * execution probability`.
 
 For example, if a buy order at 9998 was executed when the fair value was 10000, the profit from that trade would be 2.
@@ -40,6 +41,7 @@ Initially, we implemented Ornstein-Uhlenbeck process-based market making for `AM
 However, these market making models were not perfectly suited to our market since the execution probability was modeled using an exponential function. To address this, we attempted to estimate the execution probability using a Poisson distribution. Unfortunately, this did not result in a significant improvement in PnL, so we reverted back to the original model.
 
 **Market Taking:**
+
 When there were bid prices higher than the fair value, we executed market sell orders to profit from the mispricing. Also, we executed market sell orders even if the bid price was at the fair price and we had positive positions, to reduce our position.
 
 We followed a similar approach when executing market buy orders.
