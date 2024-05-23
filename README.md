@@ -57,3 +57,23 @@ We couldn't find strong connections between `ORCHIDS` and the various factors. S
 Initially, we considered market making due to the wide bid-ask spread of `ORCHIDS`, but found it impossible because bids lower than the fair price and asks higher than the fair price did not fill well.
 
 Instead, `ORCHIDS` were also tradable on the exchange of the south archipelago. Therefore, we implemented arbitrage between the two exchanges. We placed orders that maximizes expected profit per trade (= `(enter price on this island - exit price on the south archipelago - shipping cost - import tariff) * execution probability`). We estimated the execution probability through our own experiment.
+
+
+### Round 3
+##### Description
+The `GIFT_BASKET` is now available as a tradable good. This lovely basket contains three things: 
+
+1. Four `CHOCOLATE` bars
+2. Six `STRAWBERRIES`
+3. A single `ROSES`
+
+All four of the above products can now also be traded on the island exchange. Are the gift baskets a bit expensive for your taste?
+
+##### Strategy
+The price of `GIFT_BASKET` oscillated based on the underlying index, so we only traded `GIFT_BASKET`. We did not trade the underlying assets to reduce transaction costs. Although trading the underlying assets could have made the portfolio more stable despite some transaction costs, our goal was to maximize expected returns, so we chose not to do so.
+
+We optimized the trading strategy by augmenting data using Monte Carlo simulation. This helps us avoid overfitting to past data.
+
+When trading `GIFT_BASKET`, we placed market orders deep into the order book, accepting slippage to seize trading opportunities immediately.
+
+Since our limit orders were rarely filled, we did not performed market making.
